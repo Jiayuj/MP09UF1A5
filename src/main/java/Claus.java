@@ -125,10 +125,10 @@ public class Claus {
         try {
             Cipher cipher = Cipher.getInstance("RSA/ECB/PKCS1Padding");
             cipher.init(Cipher.UNWRAP_MODE, pub); // Inicia el Unwrap de la clave privada
-            Key skey = cipher.unwrap(data[1],"AES",Cipher.SECRET_KEY); // Obtiene la clave privada
-            cipher = Cipher.getInstance("AES"); // Define el Algoritmo de los datos
-            cipher.init(Cipher.DECRYPT_MODE, skey); // Inicia el decrypt de los datos usando la private key que hemos obtenido
-            encMsg = cipher.doFinal(data[0]); // Desencripta los datos
+            Key skey = cipher.unwrap(data[1],"AES",Cipher.SECRET_KEY); // consegir la clave privada
+            cipher = Cipher.getInstance("AES");
+            cipher.init(Cipher.DECRYPT_MODE, skey); // Inicia el desxifar datos usando la private key
+            encMsg = cipher.doFinal(data[0]); // desxifrar los datos
         } catch (Exception  ex) {
             System.err.println("Ha succeït un error desxifrant: " + ex);
         }
