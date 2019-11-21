@@ -118,7 +118,6 @@ public class Main {
 
 
         byte[]  clauEmbDec = Claus.decryptWrappedData(clauEmbEnc,privateKey);
-
         System.out.println(new String(clauEmbDec));
     }
 }
